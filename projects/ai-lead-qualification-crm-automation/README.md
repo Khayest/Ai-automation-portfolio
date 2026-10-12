@@ -1,8 +1,4 @@
-Yes. Based on the actual exported workflow we inspected, I'll make the README describe only features that genuinely exist and were tested—no AI-agent claims and no inflated functionality.
 
-## README draft
-
-```markdown
 # Lead Qualification & CRM Automation
 
 An end-to-end lead intake and qualification workflow built with **n8n**, **Google Sheets**, **JavaScript**, and **Gmail**.
@@ -349,8 +345,4 @@ This project demonstrates practical workflow automation skills including:
 Built as a practical AI automation portfolio project using n8n.
 ```
 
-This README is intentionally accurate to your exported workflow: for example, the export confirms the webhook uses POST, validation checks `name` and `email`, and normalization creates `email_normalized`. :chatgpt-content-reference{index="0"} :chatgpt-content-reference{index="1"} The scoring thresholds described above come directly from your `Score & Qualify Lead` JavaScript rather than being invented for the README. :chatgpt-content-reference{index="2"}
 
-One small wording choice is deliberate: I call Google Sheets a **“lightweight CRM/data store”** rather than pretending we've integrated a full CRM platform. The exported workflow shows the lead fields being appended to Google Sheets and then Hot leads being routed to Gmail. :chatgpt-content-reference{index="3"} :chatgpt-content-reference{index="4"}
-
-The next practical step is to put this into your **existing GitHub portfolio repository** with the sanitized JSON and screenshots. We can do that carefully, one GitHub step at a time, so we don't disturb your existing portfolio structure.
