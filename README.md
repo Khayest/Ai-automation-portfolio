@@ -1,44 +1,90 @@
 # AI Automation Portfolio
 
-I build and explore AI-powered automation solutions that connect AI models, APIs, and workflow orchestration tools to solve practical business problems.
+I build and explore AI-powered automation solutions that connect workflow orchestration, APIs, AI tools, and business systems to solve practical problems.
 
-My work focuses on designing automated workflows, integrating external services, experimenting with AI agents, and improving workflow reliability through testing and debugging.
+My work focuses on designing automated workflows, integrating external services, implementing business logic, experimenting with AI-assisted systems, and improving workflow reliability through testing and debugging.
 
 ## Core Areas
 
-- **AI Workflow Automation:** Designing and orchestrating automated workflows using n8n.
-- **AI Agent Development:** Exploring agent-based workflows and AI-assisted task execution.
-- **API Integration:** Connecting services and working with structured data.
-- **Workflow Logic:** Implementing triggers, conditions, data transformations, and multi-step processes.
-- **Testing and Reliability:** Debugging workflows, validating outputs, and identifying failure points.
-
-*Skills listed here will be expanded as I build and validate more complex implementations.*
+- **Workflow Automation:** Designing and orchestrating multi-step automated workflows using n8n.
+- **AI & Agent Workflows:** Exploring AI-assisted and agent-based automation systems.
+- **API & Service Integration:** Connecting external services, webhooks, and structured data.
+- **Workflow Logic:** Implementing validation, conditional routing, data transformation, scoring, and business rules.
+- **Testing & Reliability:** Testing workflow paths, validating outputs, debugging failures, and documenting verified behavior.
 
 ## Selected Projects
 
-Each project will document the problem, solution, architecture, tools, implementation, testing results, limitations, and potential improvements.
+### [Lead Qualification & CRM Automation](projects/ai-lead-qualification-crm-automation)
 
-- AI Agent Experiments
-- Equity Portfolio Rebuilder
-- Business Development Automation
-- Revenue Operations and Prospecting Workflows
-- Additional AI Automation Projects
+An end-to-end lead intake and qualification automation built with **n8n, Google Sheets, JavaScript, and Gmail**.
 
-Project documentation and demonstrations will be published as they are reviewed and verified.
+The workflow receives leads through a webhook, validates and normalizes incoming data, checks for duplicate records, calculates a deterministic lead score, classifies leads as **Hot, Warm, or Cold**, stores qualified lead data in Google Sheets, and automatically sends an email notification when a Hot lead is detected.
+
+**Key features:**
+
+- Webhook-based lead intake
+- Required-field validation
+- Data normalization
+- Duplicate lead detection
+- Deterministic lead scoring
+- Hot / Warm / Cold qualification
+- Qualification reason generation
+- Google Sheets CRM-style storage
+- Conditional Gmail alerts for Hot leads
+- Multiple test scenarios covering different lead profiles
+
+**Tools:** n8n · JavaScript · Google Sheets · Gmail · Webhooks
+
+[View project documentation →](projects/ai-lead-qualification-crm-automation)
+
+---
+
+### Business Development Automation
+
+Multi-workflow business development automation exploring prospecting, sales development, RevOps, workflow orchestration, and CRM-related processes.
+
+**Status:** In review — documentation will be expanded as individual workflow behavior is verified.
+
+---
+
+### Revenue Operations & Prospecting Workflows
+
+A collection of n8n workflows exploring prospect research, lead processing, RevOps operations, and sales automation.
+
+**Status:** In review — projects will be documented individually as their implementations and test results are verified.
 
 ## Technical Toolkit
 
-**Workflow Orchestration:** n8n
+- **Workflow Orchestration:** n8n
+- **Automation Logic:** JavaScript, conditional routing, validation, scoring, and data transformation
+- **Integrations:** Webhooks, APIs, Google Sheets, Gmail, and external services
+- **AI & Agent Systems:** AI-assisted workflows and agent-based automation experiments
+- **Data Handling:** JSON and structured workflow data
+- **Development Practices:** Testing, debugging, documentation, workflow validation, and version control
+- **Version Control:** GitHub
 
-**AI and Model Integrations:** Tools and models used in verified projects
+## Portfolio Approach
 
-**Integration and Data:** APIs, webhooks, and structured data, where demonstrated
+Projects in this repository are documented based on implemented and verified functionality.
 
-**Development Practices:** Debugging, testing, documentation, and version control
+Where a workflow is still experimental, partially tested, or under development, its status is stated rather than presenting unfinished functionality as complete.
+
+Each completed case study aims to document:
+
+- The business problem
+- Workflow architecture
+- Implementation approach
+- Tools and integrations
+- Business logic
+- Testing evidence
+- Limitations
+- Potential improvements
 
 ## Professional Development
 
-I am progressively expanding my capabilities in AI application development, agentic systems, software engineering, and reliable deployment. New technologies and skills will be added as I gain practical experience and can demonstrate their use.
+I am continuing to expand my practical skills in AI automation, AI application development, agentic systems, API integration, software engineering, and production-oriented workflow design.
+
+This portfolio will grow as additional projects are implemented, tested, and documented.
 
 ## Contact
 
