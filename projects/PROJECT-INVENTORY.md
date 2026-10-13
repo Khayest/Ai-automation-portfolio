@@ -10,6 +10,7 @@ Projects are marked as portfolio-ready only after their core functionality has b
 |---|---|---|
 | [Lead Qualification & CRM Automation](ai-lead-qualification-crm-automation) | Verified - core workflow tested | Portfolio Ready |
 | [AI Customer Support Triage & Response Assistant](ai-customer-support-triage-response-assistant) | Verified - core workflow tested | Portfolio Ready |
+| [AI Document Processing & Data Extraction](ai-document-processing-data-extraction) | Verified - core workflow tested | Portfolio Ready |
 | First AI Agent | To be verified | Under review |
 | Equity Portfolio Rebuilder | To be verified | Under review |
 | Funny Stock Lookup | To be verified | Under review |
@@ -142,6 +143,162 @@ AI-generated responses are treated as drafts for human review.
 **Tools:** n8n · OpenAI · JavaScript · Google Sheets · Gmail · Webhooks · Structured Output
 
 [View project documentation →](ai-customer-support-triage-response-assistant)
+
+---
+
+## 3. AI Document Processing & Data Extraction
+
+**Status:** Portfolio Ready
+
+An AI-assisted document processing workflow built with **n8n, OpenAI, JavaScript, Google Sheets, and Gmail**.
+
+The workflow accepts an invoice PDF through an n8n form, extracts the document text, uses an OpenAI model to convert the unstructured invoice content into structured data, validates the extracted financial information using deterministic JavaScript logic, and routes the invoice according to the validation result.
+
+Valid invoices are stored in a dedicated Google Sheets record. Invoices that fail validation are routed to a separate human-review queue and trigger an internal Gmail alert containing the invoice details and detected validation error.
+
+### Workflow Architecture
+
+The workflow follows this processing sequence:
+
+1. PDF invoice submission through an n8n form
+2. Text extraction from the uploaded PDF
+3. AI-assisted structured invoice data extraction
+4. Deterministic invoice validation
+5. Conditional valid/invalid routing
+6. Google Sheets storage for valid invoices
+7. Human-review queue storage for invalid invoices
+8. Gmail notification when human review is required
+
+### Extracted Invoice Data
+
+The AI extraction step produces structured fields including:
+
+- Invoice number
+- Vendor name
+- Invoice date
+- Due date
+- Currency
+- Purchase order
+- Subtotal
+- Tax
+- Total
+- Line-item descriptions
+- Quantities
+- Unit prices
+- Line-item amounts
+
+### Verified Functionality
+
+- PDF upload through an n8n form
+- PDF text extraction
+- OpenAI-powered invoice data extraction
+- Structured JSON output
+- Invoice field extraction
+- Line-item extraction
+- Deterministic JavaScript validation
+- Subtotal and tax validation against invoice total
+- Valid / invalid invoice classification
+- Conditional routing based on validation result
+- Google Sheets storage for valid invoices
+- Separate Google Sheets human-review queue
+- Validation error recording
+- Automated Gmail notification for invoices requiring review
+- Human-in-the-loop exception handling
+
+### Verification Evidence
+
+The workflow was tested with both valid and invalid invoice scenarios.
+
+#### Valid Invoice Test
+
+Invoice **INV-2026-1048** was successfully:
+
+- Uploaded as a PDF
+- Converted to text
+- Processed by the AI extraction step
+- Converted into structured invoice data
+- Validated successfully
+- Classified as **Valid**
+- Routed through the valid branch
+- Stored in the valid invoice Google Sheet
+
+The verified financial values included:
+
+- Subtotal: 860
+- Tax: 86
+- Total: 946
+
+The validation correctly confirmed that:
+
+**860 + 86 = 946**
+
+#### Invalid Invoice Test
+
+Invoice **INV-2026-1049** was tested with an inconsistent invoice total.
+
+The workflow identified:
+
+- Subtotal: 860
+- Tax: 86
+- Invoice Total: 1046
+
+The validation correctly detected that:
+
+**860 + 86 = 946**, which does not match the stated invoice total of **1046**.
+
+The invoice was therefore:
+
+- Classified as **Needs Review**
+- Routed through the false/review branch
+- Stored in the Human Review Queue
+- Recorded with the validation error
+- Used to trigger a Gmail human-review notification
+
+The recorded validation error stated that the calculated subtotal plus tax was 946 while the invoice total was 1046.
+
+### Human-in-the-Loop Design
+
+The workflow intentionally separates **AI extraction** from **deterministic validation**.
+
+The AI is responsible for transforming unstructured invoice text into structured data. Financial validation is then performed separately using deterministic JavaScript logic.
+
+Invoices that fail validation are **not automatically approved**.
+
+Instead, they are routed to a human-review queue and an internal notification is generated so that the original document and extracted information can be reviewed before further action is taken.
+
+### Portfolio Materials
+
+The project repository contains:
+
+- Detailed project README
+- Complete workflow architecture screenshot
+- Valid invoice results screenshot
+- Human Review Queue screenshot
+- Sanitized Human Review Alert screenshot
+- Sanitized n8n workflow JSON
+
+### Public Workflow Safety
+
+The publicly shared workflow JSON is sanitized for portfolio use.
+
+Sensitive or environment-specific information such as credentials and private account configuration should not be included in the public workflow export. Anyone importing the workflow must configure their own credentials and integrations.
+
+### Limitations
+
+This project is a portfolio demonstration of an AI-assisted document processing architecture rather than a production accounting or payment system.
+
+The workflow:
+
+- Does not autonomously approve payments
+- Does not execute payments
+- Does not modify accounting records outside the configured demonstration sheets
+- Requires human review when validation fails
+- Depends on the quality and readability of the uploaded PDF
+- Uses AI for extraction, so extracted information should be verified before consequential business action
+
+**Tools:** n8n · OpenAI · JavaScript · Google Sheets · Gmail · PDF Processing · Structured Output
+
+[View project documentation →](ai-document-processing-data-extraction)
 
 ---
 
