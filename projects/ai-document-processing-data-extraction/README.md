@@ -172,7 +172,7 @@ The invoice was then routed to the Human Review Queue.
 
 Invoices that fail validation also trigger an internal Gmail notification.
 
-![Human Review Alert](screenshots/human-review-alert.png)
+![human review aler](screenshots/human-review-alert.png)
 
 The alert contains relevant invoice information and the validation error so that a reviewer can investigate the original document before taking further action.
 
