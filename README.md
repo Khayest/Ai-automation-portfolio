@@ -7,8 +7,9 @@ My work focuses on designing automated workflows, integrating external services,
 ## Core Areas
 
 - **Workflow Automation:** Designing and orchestrating multi-step automated workflows using n8n.
-- **AI-Powered Automation:** Integrating language models into workflows for classification, analysis, structured output, and response generation.
+- **AI-Powered Automation:** Integrating language models into workflows for classification, analysis, structured data extraction, and response generation.
 - **AI & Agent Workflows:** Exploring AI-assisted and agent-based automation systems.
+- **Document Processing:** Extracting structured business data from documents and routing results through validation workflows.
 - **API & Service Integration:** Connecting external services, webhooks, and structured data.
 - **Workflow Logic:** Implementing validation, conditional routing, data transformation, scoring, and business rules.
 - **Testing & Reliability:** Testing workflow paths, validating outputs, debugging failures, and documenting verified behavior.
@@ -73,6 +74,40 @@ The system follows a **human-in-the-loop design**, where AI-generated analysis a
 
 ---
 
+### [AI Document Processing & Data Extraction](projects/ai-document-processing-data-extraction)
+
+An AI-assisted invoice processing automation built with **n8n, OpenAI, JavaScript, Google Sheets, Gmail, and PDF processing**.
+
+The workflow accepts an invoice PDF through an n8n form, extracts its text, uses an OpenAI model to convert unstructured invoice content into structured data, validates the extracted financial information using deterministic JavaScript logic, and routes the invoice according to the validation result.
+
+Valid invoices are stored in Google Sheets. Invoices that fail validation are routed to a separate **Human Review Queue** and trigger an internal Gmail alert containing the invoice details and validation error.
+
+**Key features:**
+
+- PDF invoice upload through an n8n form
+- Automated PDF text extraction
+- AI-powered structured invoice data extraction
+- JSON Schema structured output
+- Invoice and line-item extraction
+- Deterministic JavaScript validation
+- Subtotal + tax vs. invoice total verification
+- Valid / Needs Review classification
+- Conditional workflow routing
+- Google Sheets storage for valid invoices
+- Separate Human Review Queue for failed validation
+- Validation error recording
+- Automated Gmail human-review alerts
+- Human-in-the-loop exception handling
+- Valid and invalid invoice test scenarios
+
+The architecture intentionally separates **AI extraction from deterministic validation**. AI converts the document into structured data, while JavaScript independently applies the financial validation rules. Invoices that fail validation are not automatically approved.
+
+**Tools:** n8n · OpenAI · JavaScript · Google Sheets · Gmail · PDF Processing · Structured Output
+
+[View project documentation →](projects/ai-document-processing-data-extraction)
+
+---
+
 ### Business Development Automation
 
 Multi-workflow business development automation exploring prospecting, sales development, RevOps, workflow orchestration, and CRM-related processes.
@@ -90,12 +125,13 @@ A collection of n8n workflows exploring prospect research, lead processing, RevO
 ## Technical Toolkit
 
 - **Workflow Orchestration:** n8n
-- **AI Integration:** OpenAI chat models, prompt design, structured AI output, classification, summarization, and response drafting
+- **AI Integration:** OpenAI chat models, prompt design, structured AI output, classification, summarization, data extraction, and response drafting
+- **Document Processing:** PDF text extraction, structured invoice extraction, and document-to-structured-data workflows
 - **Automation Logic:** JavaScript, conditional routing, validation, scoring, and data transformation
 - **Integrations:** Webhooks, APIs, Google Sheets, Gmail, and external services
 - **AI & Agent Systems:** AI-assisted workflows and agent-based automation experiments
-- **Data Handling:** JSON, structured workflow data, and structured LLM output
-- **Human-in-the-Loop Design:** AI-assisted decision support with human review before sensitive or customer-facing actions
+- **Data Handling:** JSON, JSON Schema, structured workflow data, and structured LLM output
+- **Human-in-the-Loop Design:** AI-assisted processing with human review before sensitive, financial, or customer-facing actions
 - **Development Practices:** Testing, debugging, documentation, workflow validation, sanitization of public artifacts, and version control
 - **Version Control:** GitHub
 
@@ -121,7 +157,7 @@ Each completed case study aims to document:
 
 ## Professional Development
 
-I am continuing to expand my practical skills in AI automation, AI application development, agentic systems, API integration, software engineering, and production-oriented workflow design.
+I am continuing to expand my practical skills in AI automation, AI application development, agentic systems, API integration, software engineering, document processing, and production-oriented workflow design.
 
 This portfolio will grow as additional projects are implemented, tested, and documented.
 
