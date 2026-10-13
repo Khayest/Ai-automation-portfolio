@@ -2,11 +2,12 @@
 
 I build and explore AI-powered automation solutions that connect workflow orchestration, APIs, AI tools, and business systems to solve practical problems.
 
-My work focuses on designing automated workflows, integrating external services, implementing business logic, experimenting with AI-assisted systems, and improving workflow reliability through testing and debugging.
+My work focuses on designing automated workflows, integrating external services, implementing business logic, building AI-assisted systems, and improving workflow reliability through structured testing and debugging.
 
 ## Core Areas
 
 - **Workflow Automation:** Designing and orchestrating multi-step automated workflows using n8n.
+- **AI-Powered Automation:** Integrating language models into workflows for classification, analysis, structured output, and response generation.
 - **AI & Agent Workflows:** Exploring AI-assisted and agent-based automation systems.
 - **API & Service Integration:** Connecting external services, webhooks, and structured data.
 - **Workflow Logic:** Implementing validation, conditional routing, data transformation, scoring, and business rules.
@@ -39,6 +40,39 @@ The workflow receives leads through a webhook, validates and normalizes incoming
 
 ---
 
+### [AI Customer Support Triage & Response Assistant](projects/ai-customer-support-triage-response-assistant)
+
+An AI-powered customer support automation built with **n8n, OpenAI, Google Sheets, JavaScript, and Gmail**.
+
+The workflow receives support tickets through a webhook, validates and normalizes incoming data, uses an OpenAI model to classify and analyze each ticket, converts the AI response into structured data, stores the result in a support queue, and automatically alerts the support team when a ticket is classified as **High** or **Urgent** priority.
+
+The system follows a **human-in-the-loop design**, where AI-generated analysis and draft responses are reviewed before customer-facing action is taken.
+
+**Key features:**
+
+- Webhook-based support ticket intake
+- Required-field validation
+- Ticket data normalization
+- OpenAI-powered ticket analysis
+- Structured AI output parsing
+- Category classification
+- Low / Medium / High / Urgent priority classification
+- Sentiment classification
+- AI-generated summaries
+- Recommended-action generation
+- Draft response generation for human review
+- Google Sheets support queue
+- Conditional High / Urgent priority routing
+- Automated Gmail priority alerts
+- Human-review and authorization safeguards
+- Multiple ticket scenarios and invalid-input testing
+
+**Tools:** n8n · OpenAI · JavaScript · Google Sheets · Gmail · Webhooks · Structured Output
+
+[View project documentation →](projects/ai-customer-support-triage-response-assistant)
+
+---
+
 ### Business Development Automation
 
 Multi-workflow business development automation exploring prospecting, sales development, RevOps, workflow orchestration, and CRM-related processes.
@@ -56,11 +90,13 @@ A collection of n8n workflows exploring prospect research, lead processing, RevO
 ## Technical Toolkit
 
 - **Workflow Orchestration:** n8n
+- **AI Integration:** OpenAI chat models, prompt design, structured AI output, classification, summarization, and response drafting
 - **Automation Logic:** JavaScript, conditional routing, validation, scoring, and data transformation
 - **Integrations:** Webhooks, APIs, Google Sheets, Gmail, and external services
 - **AI & Agent Systems:** AI-assisted workflows and agent-based automation experiments
-- **Data Handling:** JSON and structured workflow data
-- **Development Practices:** Testing, debugging, documentation, workflow validation, and version control
+- **Data Handling:** JSON, structured workflow data, and structured LLM output
+- **Human-in-the-Loop Design:** AI-assisted decision support with human review before sensitive or customer-facing actions
+- **Development Practices:** Testing, debugging, documentation, workflow validation, sanitization of public artifacts, and version control
 - **Version Control:** GitHub
 
 ## Portfolio Approach
@@ -76,9 +112,12 @@ Each completed case study aims to document:
 - Implementation approach
 - Tools and integrations
 - Business logic
+- AI integration where applicable
 - Testing evidence
+- Human-review considerations where applicable
 - Limitations
 - Potential improvements
+- Reproducible workflow artifacts where appropriate
 
 ## Professional Development
 
